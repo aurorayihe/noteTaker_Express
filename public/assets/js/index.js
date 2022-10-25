@@ -48,7 +48,8 @@ const deleteNote = (id) =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  }).then(res.json())
+    .then(console.log(currentNote));
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -181,3 +182,5 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+
